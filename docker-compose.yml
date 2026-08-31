@@ -1,0 +1,14 @@
+services:
+  retail-analytics:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      ROWS: "3000"
+      SEED: "42"
+    volumes:
+      - analytics-artifacts:/app/artifacts
+    restart: unless-stopped
+
+volumes:
+  analytics-artifacts:

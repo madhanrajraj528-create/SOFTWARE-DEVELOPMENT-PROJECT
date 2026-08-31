@@ -25,6 +25,16 @@ The `--seed` option makes the generated dataset reproducible. The pipeline write
 
 The `sales` table contains `order_id`, `order_date`, `customer_id`, `region`, `category`, `product`, `quantity`, `unit_price`, `discount_pct`, and calculated `revenue`. Revenue is calculated as `quantity × unit_price × (1 − discount_pct / 100)` and rounded to two decimal places.
 
+## Docker
+
+Build and run the pipeline with:
+
+```bash
+docker compose up --build
+```
+
+The container generates reproducible artifacts and serves them at `http://localhost:8080`. Configure `ROWS` and `SEED` in `docker-compose.yml` to change the generated dataset.
+
 ## Testing
 
 Run the automated checks with:
